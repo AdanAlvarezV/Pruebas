@@ -1,0 +1,13 @@
+{
+  "name": "casa",
+  "description": "Sistema de prueba",
+  "version": "1.0.0",
+  "author": {
+    "name": "Adán Alvarez V.",
+    "email": "ing.adanalvarez.valenzuela@gmail.com",
+    "url": "https://github.com/AdanAlvarezV"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
