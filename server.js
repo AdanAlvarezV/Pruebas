@@ -5,6 +5,7 @@ const router = require("./router");
 const app = express();
 
 app.get("/usuario/producto/registrar" , router.registrar_producto);
+
 app.get("/", (req, res) => {
     res.send("HOLA");
 })
