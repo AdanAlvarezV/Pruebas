@@ -8,7 +8,16 @@ function registrar_producto(req, res) {
     const UNIDAD = req.query.UNIDAD;
     const CANTIDAD = req.query.CANTIDAD;
 
-    f.registrar_producto(NOMBRE, CATEGORIA, TIENDA, PRECIO_ESTIMADO, UNIDAD, CANTIDAD).then(() => {
+    const producto = {
+        NOMBRE,
+        CATEGORIA,
+        TIENDA,
+        PRECIO_ESTIMADO,
+        UNIDAD,
+        CANTIDAD
+    }
+
+    f.registrar_producto(producto).then(() => {
         res.send({
             success: true,
             date: new Data()
