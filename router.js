@@ -30,11 +30,21 @@ function registrar_producto(req, res) {
     });
 }
 
-function editar_producto(req, res) {
-    
+function getproductos(req, res) {
+    f.getproductos().then((productos) => {
+        res.send({
+            productos
+        });
+    }).catch(err => {
+        res.send({
+            error: true,
+            inf: err
+        });
+    });
 }
 
 module.exports = {
     connect: f.connect,
-    registrar_producto
+    registrar_producto,
+    getproductos
 }

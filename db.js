@@ -13,6 +13,28 @@ function connect() {
     });
 }
 
+function getproductos() {
+    return new Promise((resolve, reject) => {
+        const ps = new sql.PreparedStatement();
+        const query = "SELECT * FROM PRODUCT WHERE STATUS = 'PENDIENTE'";
+        ps.prepare(query, err => {
+            if(err){
+                reject("Error al buscar los productos:" + err);
+                return;
+            }
+            ps.execute({}, (err, result) => {
+                if(err){
+                    reject("Error crear producto faltante\n" + err);
+                    return;
+                }
+                ps.unprepare(() => {
+                    resolve(result);
+                });
+            })
+        })
+    })
+}
+
 function insert_product(producto){
      return new Promise((resolve, reject) => {
          const ps = new sql.PreparedStatement();
@@ -64,5 +86,6 @@ function insert_product(producto){
 
 module.exports = {
     connect,
-    insert_product
+    insert_product,
+    getproductos
 }

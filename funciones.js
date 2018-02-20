@@ -16,8 +16,13 @@ function registrar_producto(producto) {
     });
 }
 
+function getproductos() {
+    return db.getproductos();
+}
+
 module.exports = {
     connect: db.connect,
-    registrar_producto
+    registrar_producto,
+    getproductos
 
 }
