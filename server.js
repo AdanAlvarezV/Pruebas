@@ -4,7 +4,8 @@ const router = require("./router");
 
 const app = express();
 
-app.get("/usuario/producto/registrar" , router.registrar_producto);
+app.post("/usuario/producto/registrar" , router.registrar_producto);
+app.get("/usuario/producto/editar", router.editar_producto);
 
 app.get("/", (req, res) => {
     res.send("HOLA");

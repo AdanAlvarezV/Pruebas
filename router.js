@@ -20,7 +20,7 @@ function registrar_producto(req, res) {
     f.registrar_producto(producto).then(() => {
         res.send({
             success: true,
-            date: new Data()
+            date: new Date()
         });
     }).catch(err => {
         res.send({
@@ -28,6 +28,10 @@ function registrar_producto(req, res) {
             info: err
         });
     });
+}
+
+function editar_producto(req, res) {
+    
 }
 
 module.exports = {
